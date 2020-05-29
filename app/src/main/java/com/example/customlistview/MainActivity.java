@@ -33,61 +33,59 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.listView);
         MyAdapter adapter = new MyAdapter(this, buildName, buildDescription, images);
         listView.setAdapter(adapter);
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int item, long id) {
 
-                if (position == 0) {
+                if (item == 0) {
                     Intent intent = new Intent(getApplicationContext(), DescriptionActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putInt("image", images[0]);
                     intent.putExtras(bundle);
                     intent.putExtra("title", buildName[0]);
                     intent.putExtra("description", buildDescription[0]);
-                    intent.putExtra("position", ""+0);
+                    intent.putExtra("item", ""+0);
                     startActivity(intent);
 
-
                 }
-                if (position == 1) {
+                if (item == 1) {
                     Intent intent = new Intent(getApplicationContext(), DescriptionActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putInt("image", images[1]);
                     intent.putExtras(bundle);
                     intent.putExtra("title", buildName[1]);
                     intent.putExtra("description", buildDescription[1]);
-                    intent.putExtra("position", ""+1);
+                    intent.putExtra("item", ""+1);
                     startActivity(intent);
                 }
-                if (position == 2) {
+                if (item == 2) {
                     Intent intent = new Intent(getApplicationContext(), DescriptionActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putInt("image", images[2]);
                     intent.putExtras(bundle);
                     intent.putExtra("title", buildName[2]);
                     intent.putExtra("description", buildDescription[2]);
-                    intent.putExtra("position", ""+2);
+                    intent.putExtra("item", ""+2);
                     startActivity(intent);
                 }
-                if (position == 3) {
+                if (item == 3) {
                     Intent intent = new Intent(getApplicationContext(), DescriptionActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putInt("image", images[3]);
                     intent.putExtras(bundle);
                     intent.putExtra("title", buildName[3]);
                     intent.putExtra("description", buildDescription[3]);
-                    intent.putExtra("position", ""+3);
+                    intent.putExtra("item", ""+3);
                     startActivity(intent);
                 }
-                if (position == 4) {
+                if (item == 4) {
                     Intent intent = new Intent(getApplicationContext(), DescriptionActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putInt("image", images[4]);
                     intent.putExtras(bundle);
                     intent.putExtra("title", buildName[4]);
                     intent.putExtra("description", buildDescription[4]);
-                    intent.putExtra("position", ""+4);
+                    intent.putExtra("item", ""+4);
                     startActivity(intent);
                 }
             }
@@ -113,13 +111,10 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             LayoutInflater layoutInflater = (LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
             View row = layoutInflater.inflate(R.layout.row, parent, false);
-
             ImageView images = row.findViewById(R.id.image);
             TextView myTitle = row.findViewById(R.id.textView1);
             TextView myDescription = row.findViewById(R.id.textView2);
-
             images.setImageResource(rImages[position]);
             myTitle.setText(rTitle[position]);
             myDescription.setText(rDescription[position]);

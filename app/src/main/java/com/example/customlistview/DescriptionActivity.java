@@ -10,9 +10,9 @@ import android.widget.TextView;
 
 public class DescriptionActivity extends AppCompatActivity {
 
-    ImageView imageView;
-    TextView title, description;
-    int position;
+    ImageView imageView; //shows the picture corresponding to each build tier
+    TextView title, description; //description of PC parts
+    int item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class DescriptionActivity extends AppCompatActivity {
         title = findViewById(R.id.titleText);
         description = findViewById(R.id.descriptionText);
 
-        if (position == 0) {
+        if (item == 0) {
             Intent intent = getIntent();
             Bundle bundle = this.getIntent().getExtras();
             int image = bundle.getInt("image");
@@ -40,7 +40,7 @@ public class DescriptionActivity extends AppCompatActivity {
             actionBar.setTitle(aTitle);
         }
 
-        if (position == 1) {
+        if (item == 1) {
             Intent intent = getIntent();
             Bundle bundle = this.getIntent().getExtras();
             int image = bundle.getInt("image");
@@ -52,7 +52,7 @@ public class DescriptionActivity extends AppCompatActivity {
             actionBar.setTitle(aTitle);
         }
 
-        if (position == 2) {
+        if (item == 2) {
             Intent intent = getIntent();
             Bundle bundle = this.getIntent().getExtras();
             int image = bundle.getInt("image");
@@ -64,7 +64,7 @@ public class DescriptionActivity extends AppCompatActivity {
             actionBar.setTitle(aTitle);
         }
 
-        if (position == 3) {
+        if (item == 3) {
             Intent intent = getIntent();
             Bundle bundle = this.getIntent().getExtras();
             int image = bundle.getInt("image");
@@ -76,7 +76,7 @@ public class DescriptionActivity extends AppCompatActivity {
             actionBar.setTitle(aTitle);
         }
 
-        if (position == 4) {
+        if (item == 4) {
             Intent intent = getIntent();
             Bundle bundle = this.getIntent().getExtras();
             int image = bundle.getInt("image");
